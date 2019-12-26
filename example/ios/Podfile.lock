@@ -1,0 +1,29 @@
+PODS:
+  - f_ijk (0.0.1):
+    - Flutter
+    - ijkplayer
+  - Flutter (1.0.0)
+  - ijkplayer (1.1.3)
+
+DEPENDENCIES:
+  - f_ijk (from `.symlinks/plugins/f_ijk/ios`)
+  - Flutter (from `Flutter`)
+
+SPEC REPOS:
+  trunk:
+    - ijkplayer
+
+EXTERNAL SOURCES:
+  f_ijk:
+    :path: ".symlinks/plugins/f_ijk/ios"
+  Flutter:
+    :path: Flutter
+
+SPEC CHECKSUMS:
+  f_ijk: e623bdf79a961cf77cadc4082404d1acef703122
+  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
+  ijkplayer: 1a1a33f5b0387bd7ea297337853130b9ddb20093
+
+PODFILE CHECKSUM: 3dbe063e9c90a5d7c9e4e76e70a821b9e2c1d271
+
+COCOAPODS: 1.8.3
