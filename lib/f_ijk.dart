@@ -27,7 +27,6 @@ class LivePlayerView extends StatelessWidget {
   final bool shouldAutoPlayer;
   int _id;
 
-
   int get id => _id;
 
   LivePlayerView({Key key, this.callback, this.url, this.shouldAutoPlayer})
@@ -39,7 +38,20 @@ class LivePlayerView extends StatelessWidget {
       return UiKitView(
         viewType: 'plugins/live_player',
         onPlatformViewCreated: _onPlatformViewCreated,
-        creationParams: <String, dynamic>{'url': url, 'shouldAutoPlayer': shouldAutoPlayer},
+        creationParams: <String, dynamic>{
+          'url': url,
+          'shouldAutoPlayer': shouldAutoPlayer
+        },
+        creationParamsCodec: StandardMessageCodec(),
+      );
+    } else if (defaultTargetPlatform == TargetPlatform.android) {
+      return AndroidView(
+        viewType: 'plugins/live_player',
+        onPlatformViewCreated: _onPlatformViewCreated,
+        creationParams: <String, dynamic>{
+          'url': url,
+          'shouldAutoPlayer': shouldAutoPlayer
+        },
         creationParamsCodec: StandardMessageCodec(),
       );
     }
@@ -52,7 +64,6 @@ class LivePlayerView extends StatelessWidget {
     callback(LivePlayerController._(id));
   }
 }
-
 
 class FIjk {
   static const MethodChannel _channel = const MethodChannel('f_ijk');
