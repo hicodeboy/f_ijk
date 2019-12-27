@@ -1,6 +1,6 @@
 name: f_ijk
-description: A new flutter plugin project.
-version: 0.0.2
+description: 基于IJKPlayer封装的Flutter播放插件
+version: 0.0.3
 author:
 homepage:
 
