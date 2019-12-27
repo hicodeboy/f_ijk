@@ -17,22 +17,23 @@ import io.flutter.plugin.platform.PlatformViewFactory;
  */
 
 public class NLayoutFactory extends PlatformViewFactory {
-    private final BinaryMessenger messageCodec;
+    private FlutterPlugin.FlutterPluginBinding flutterPluginBinding;
 
-    public NLayoutFactory(BinaryMessenger createArgsCodec) {
+    public NLayoutFactory(FlutterPlugin.FlutterPluginBinding flutterPluginBinding) {
         super(StandardMessageCodec.INSTANCE);
-        this.messageCodec = createArgsCodec;
+        this.flutterPluginBinding = flutterPluginBinding;
     }
 
     @Override
     public PlatformView create(Context context, int viewId, Object args) {
         Map<String, Object> params = (Map<String, Object>) args;
-        return new NLayout(context, messageCodec, viewId, params);
+        return new NLayout(context, this.flutterPluginBinding, viewId, params);
     }
 
     public static void registerWith(FlutterPlugin.FlutterPluginBinding flutterPluginBinding) {
+
         flutterPluginBinding.getPlatformViewRegistry().
                 registerViewFactory("plugins/live_player",
-                        new NLayoutFactory(flutterPluginBinding.getBinaryMessenger()));
+                        new NLayoutFactory(flutterPluginBinding));
     }
 }
