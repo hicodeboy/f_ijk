@@ -1,8 +1,8 @@
 name: f_ijk
 description: 基于IJKPlayer封装的Flutter播放插件
 version: 0.0.3
-author:
-homepage:
+#author: hicodeboy <2685312867@qq.com>
+homepage: https://github.com/hicodeboy/f_ijk
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
